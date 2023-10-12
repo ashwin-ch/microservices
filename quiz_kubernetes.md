@@ -1,0 +1,3 @@
+# Summary on articles
+## "MongoDB queries don't always return all matching documents!". The author is David Glasser
+* The main finding or observation made by the article is around the Mongo DB quries which might not return results from all matching documents while writing to documents in parallel. This is due to the fact the MongoDb is constructed to provide consistency over single document and not across collection of documents. While multiple client tries to access and update the mongoDb, there is a chance of such behavior, and it outlines, this happens only queries based on indexes. Key learning is that, this can be avoided by taking a $snapshot before running the query might resolve. 
