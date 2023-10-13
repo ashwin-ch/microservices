@@ -8,4 +8,16 @@
 ## Kubernetes failure stories
 * This is accumulated stories on the failure and shortcoming encountered while deploying, few things I learnt is, the DNS failure how it impacts a Kubernetes ecosystem, and how CPU throttling could be bottleneck and how it can be improved by getting rid of CPU limits. Highlights the issues encountered by Zalando during the course of kubernetes, and how it can backfire with some misconfiguration. It helps as a dictionary for future references to read more about kubernetes user experiences and industrial failures encountered, haven't got the chance to read through and see all the videos. 
 
-##
+## Andersson, J., & Norrman, F. (2020). Container Orchestration: the Migration Path to Kubernetes
+* This book highlights the challenges encoutered in migrating towards kubernetes, and highlightes the complexities involved because of huge options and configurations, features. This makes the beginning complex. The articles highlights recommendations on how the migration needs to be handled in smaller chunks and workloads in order make it achievable and scalable as they get more familar with platform as they encounter the perks and way of working and expertise and development community getting used to platform. 
+* Learnt how to manage communication between stakeholders and other involved in the migration inorder to make it more effective and achievable. 
+* Understood the importance of maintenance and support required post migration which is a key for having seemless operation, it is not just a infrastructure migration it is basically a platform which needs to be updated. 
+
+
+
+## Kubernetes exercise
+### Kuberebetes services
+* Kubernetes provides 4 services, against various usecases, such as ClusterIP, NodePort, Load Balancer and ExternalName. ClusterIP provides ability to expose a service using VirtualIP address, NodePort provides capability to expose a service in a node within a cluster with a static port. Load balancer utilizes load balancer in the cloud provides to provide or expose a service externally. External Name helps to map a service to a external DNS name. 
+
+### It is recommended to start Services before the Containers they refer to. Why?
+* The reason behind this, is to avoid overloading the kubernetes cluster, and to have the services available for clusters to consume before start using them. Also I think it makes sense in to have such start-up order to have easier deployment and management of the pods. In this mechanism, there are init containers who are initialized in the pods to help and facilitate the features available for other containers to consumer during the runtime. 
